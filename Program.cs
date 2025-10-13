@@ -8,5 +8,12 @@
 //[[],[2147483646],[2147483646],[2147483647],[],[],[],[],[],[],[2147483647],[],[],[-2147483648],[],[],[],[]]
 
 
-int[] temperatures = new int[] { 73, 74, 75, 71, 69, 72, 76, 73 };
-new Daily_Temperatures().DailyTemperatures(temperatures);
+//int[] temperatures = new int[] { 73, 74, 75, 71, 69, 72, 76, 73 };
+//new Daily_Temperatures().DailyTemperatures(temperatures);
+
+
+var list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+var list2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+
+var result = new Merge_Two_Sorted_Lists().MergeTwoLists(list1, list2);
+Console.WriteLine(result);

@@ -26,16 +26,16 @@ namespace Algorithms.Solutions
 
             return hasCycle;
         }
-    }
-
-    public bool HasCycle_Better(ListNode head)
+        public bool HasCycle_Better(ListNode head)
         {
             var visited = new HashSet<ListNode>();
 
             while (head != null)
             {
                 if (visited.Contains(head))
+                {
                     return true;
+                }
 
                 visited.Add(head);
                 head = head.next;
@@ -43,7 +43,8 @@ namespace Algorithms.Solutions
 
             return false;
         }
-    }
+    } 
+}
 
 /**
  * Definition for singly-linked list.

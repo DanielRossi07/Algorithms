@@ -1,4 +1,5 @@
-﻿namespace Algorithms.Solutions
+﻿//https://leetcode.com/problems/valid-anagram/description/
+namespace Algorithms.Solutions
 {
     public class Valid_Anagram
     {
@@ -14,16 +15,42 @@
 
             for (var pos = 0; pos < s.Length; pos++)
             {
-                var amountOfCharInS = sHash[s[pos]];
-                sHash.Add(s[pos], amountOfCharInS + 1);
+                int amountOfCharInS;
+                sHash.TryGetValue(s[pos], out amountOfCharInS);
 
-                var amountOfCharInT = tHash[t[pos]];
-                tHash.Add(t[pos], amountOfCharInT + 1);
+                if (amountOfCharInS != 0)
+                {
+                    sHash[s[pos]] = amountOfCharInS + 1;
+                }
+                else
+                {
+                    sHash.Add(s[pos], 1);
+                }
+                    
+
+                int amountOfCharInT;
+                tHash.TryGetValue(t[pos], out amountOfCharInT);
+
+                if (amountOfCharInT != 0)
+                {
+                    tHash[t[pos]] = amountOfCharInT + 1;
+                }
+                else
+                {
+                    tHash.Add(t[pos], 1);
+                }
+                    
             }
 
             foreach (var distChar in sHash.Keys.Distinct())
             {
-                if (sHash[distChar] != tHash[distChar])
+                int amountOfCharInS;
+                sHash.TryGetValue(distChar, out amountOfCharInS);
+
+                int amountOfCharInT;
+                tHash.TryGetValue(distChar, out amountOfCharInT);
+
+                if (amountOfCharInS != amountOfCharInT)
                 {
                     return false;
                 }

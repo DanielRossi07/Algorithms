@@ -18,9 +18,34 @@
 //var result = new Merge_Two_Sorted_Lists().MergeTwoLists(list1, list2);
 //Console.WriteLine(result);
 
+//using Algorithms.Solutions;
+
+//var s = "anagram"; 
+//var t = "nagaram";
+
+//new Valid_Anagram().IsAnagram(s, t);
+
 using Algorithms.Solutions;
 
-var s = "anagram"; 
-var t = "nagaram";
+var root = new TreeNode(0,
+    new TreeNode(2,
+        new TreeNode(1,
+            new TreeNode(5),
+            new TreeNode(1)
+        ),
+        null
+    ),
+    new TreeNode(4,
+        new TreeNode(3,
+            null,
+            new TreeNode(6,
+                null,
+                new TreeNode(8)
+            )
+        ),
+        new TreeNode(-1)
+    )
+);
 
-new Valid_Anagram().IsAnagram(s, t);
+var result = new Maximum_Depth_Of_Binary_Tree().MaxDepth(root);
+Console.WriteLine(result);
